@@ -9,29 +9,34 @@ using pothole_detection_system.DB_conn;
 using DAL_potholedete.entities;
 using BLL_potholedete.operation;
 
-namespace pothole_detection_system.Admins
+namespace pothole_detection_system.userr
 {
-    public partial class WebForm4 : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
-        db_connection cn= new db_connection();
+        db_connection cn = new db_connection();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtui.Text = Session["uname"].ToString();
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
-            et_feedback f= new et_feedback();
-            f.email=txteml.Text;
-            f.message=txtmsg.Text;
-            f.submission_date=txtsub.Text;
-            //f.uid=ui.Text;
-            op_feedback op=new op_feedback();
-            op.feedback_insert(f);
-            Response.Write("<script>alert('done!');</script>");
-            txteml.Text = "";
+            et_feedback ef = new et_feedback();
+            ef.email = txtem.Text;
+            ef.message = txtmsg.Text;
+            ef.submission_date = txtsub.Text;
+            ef.uid = txtui.Text;
+            op_feedback op = new op_feedback();
+            op.feedback_insert(ef);
+            Response.Write("<script>alert('Done!');</script>");
+            // Response.Redirect("/Admins/view_feedback.aspx");
+            txtem.Text = "";
             txtmsg.Text = "";
             txtsub.Text = "";
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+
         }
     }
 }

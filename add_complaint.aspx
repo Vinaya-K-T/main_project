@@ -1,74 +1,77 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admins/Site1.Master" AutoEventWireup="true" CodeBehind="add_complaint.aspx.cs" Inherits="pothole_detection_system.Admins.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/userr/Site1.Master" AutoEventWireup="true" CodeBehind="WebForm3.aspx.cs" Inherits="pothole_detection_system.userr.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+ <style>
+        html, body, form {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .full-center-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 600px;
+        }
+    </style></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    			<section class="vbox">
-				<section class="scrollable padder">
-					<div class="m-b-md">
-						<h3 class="m-b-none">Complaint</h3>
-					</div>
-					<div class="row">
-						<div class="col-sm-12">
-						
-								<section class="panel panel-default">
-									<div class="panel-body">
-										<div class="form-group">
-											<table class="table table-bordered">
-               
-                <tr>
-                    <th>Location:</th>
-                    <td>
-                        <asp:TextBox ID="txtlocn" runat="server" class="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtlocn"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Submission Date:</th>
-                    <td>
-                        <asp:TextBox ID="txtsdt" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtsdt"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Description:</th>
-                    <td>
-                        <asp:TextBox ID="txtdes" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtdes"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Upload Image:</th>
-                    <td>
-                        <asp:FileUpload ID="img" runat="server" />
-                    </td>
-                </tr>
-                <tr>
-                    <th>Status</th>
-                     <td>
-                        <asp:DropDownList ID="sts" runat="server" CssClass="form-control">
-                            <asp:ListItem Text="Pending" Value="Pending"></asp:ListItem>
-                            <asp:ListItem Text="In Progress" Value="In Progress"></asp:ListItem>
-                            <asp:ListItem Text="Resolved" Value="Resolved"></asp:ListItem>
-                        </asp:DropDownList>
-                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="sts"></asp:RequiredFieldValidator>
-                      </td>
+<div class="full-center-wrapper">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-primary text-white text-center rounded-top-4">
+                <h3 class="mb-0">Complaint Form</h3>
+                <p class="mb-0 small">Please provide the required details</p>
+            </div>
+            <div class="card-body p-4 bg-white rounded-bottom-4">
+                <table class="table table-borderless mb-0">
+                    <tr>
+                        <th class="w-25 align-middle">Location:</th>
+                        <td>
+                            <asp:TextBox ID="txtlocn" runat="server" CssClass="form-control" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Required" ForeColor="Red" ControlToValidate="txtlocn" Display="Dynamic" />
+                        </td>
                     </tr>
-               <tr>
-    <th>pid:</th>
-    <td>
-        <asp:TextBox ID="id" runat="server" class="form-control"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator7"  runat="server"  ErrorMessage="*" ForeColor="Red" ControlToValidate="id" />
-    </td>
-</tr>
-     </table>
-                                            </div>
-									</div>
-								</section>
-                                        </div>
-                                    </div>
-                                    </section>
-									<footer class="panel-footer text-center bg-light lter">
-                                        <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click"  CssClass="btn btn-success"/> 
-                                   </footer>
-								</section>
-</asp:Content>
+                    <tr>
+                        <th class="align-middle">Submission Date:</th>
+                        <td>
+                            <asp:TextBox ID="txtsdt" runat="server" CssClass="form-control" TextMode="Date" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Required" ForeColor="Red" ControlToValidate="txtsdt" Display="Dynamic" />
+                            <asp:RangeValidator ID="RangeValidator1" runat="server" Type="Date" ErrorMessage="* Invalid date" ForeColor="Red" ControlToValidate="txtsdt" Display="Dynamic" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="align-middle">Description:</th>
+                        <td>
+                            <asp:TextBox ID="txtdes" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* Required" ForeColor="Red" ControlToValidate="txtdes" Display="Dynamic" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="align-middle">Upload Image:</th>
+                        <td>
+                            <asp:FileUpload ID="img" runat="server" CssClass="form-control" />
+                        </td>
+                    </tr>
+                    <%--<tr>
+                        <th class="align-middle">Status:</th>
+                        <td>
+                            <asp:DropDownList ID="sts" runat="server" CssClass="form-select">
+                                <asp:ListItem Text="Pending" Value="Pending" />
+                                <asp:ListItem Text="In Progress" Value="In Progress" />
+                                <asp:ListItem Text="Resolved" Value="Resolved" />
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Required" ForeColor="Red" ControlToValidate="sts" Display="Dynamic" />
+                        </td>
+                    </tr>--%>
+                </table>
+            </div>
+            <div class="card-footer bg-light text-center">
+                <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" CssClass="btn btn-success px-4 py-2 shadow-sm" />
+            </div>
+        </div>
+    </div></asp:Content>

@@ -11,7 +11,7 @@ using BLL_potholedete.operation;
 
 namespace pothole_detection_system.userr
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class WebForm6 : System.Web.UI.Page
     {
         db_connection cn=new db_connection();
         protected void Page_Load(object sender, EventArgs e)
@@ -20,35 +20,36 @@ namespace pothole_detection_system.userr
         }
         void grid_data()
         {
-            //cn.da = new SqlDataAdapter("select * from feedback", cn.connect());
+            //cn.da = new SqlDataAdapter("select * from potholedetect", cn.connect());
             //DataTable dt = new DataTable();
             //cn.da.Fill(dt);
             //GridView1.DataSource = dt;
             //GridView1.DataBind();
 
-            cn.cmd = new SqlCommand("select * from feedback", cn.connect());
+            cn.cmd = new SqlCommand("select * from potholedetect", cn.connect());
             DataTable dt = new DataTable();
             cn.dr=cn.cmd.ExecuteReader();
-            {
                 dt.Columns.Add("#");
-                dt.Columns.Add("Email");
-                dt.Columns.Add("Message");
-                dt.Columns.Add("Submission Date");
-                dt.Columns.Add("u_id");
+                dt.Columns.Add("Image");
+                dt.Columns.Add("Location");
+                dt.Columns.Add("Description");
+                dt.Columns.Add("Status");
+               // dt.Columns.Add("uid");
                  int count = 1;
-                while (cn.dr.Read())
+                while(cn.dr.Read())
                 {
-                    DataRow row = dt.NewRow();
-                    row["#"] = cn.dr["fid"];
-                    row["Email"] = cn.dr["Email"];
-                    row["Message"] = cn.dr["Message"];
-                    row["Submission Date"] = cn.dr["submission_date"];
+                    DataRow row= dt.NewRow();
+                    row["#"] = cn.dr["pid"];
+                    row["Image"] = cn.dr["image"];
+                    row["Location"] = cn.dr["location"];
+                    row["Description"]=cn.dr["description"];
+                    row["Status"] = cn.dr["status"];
+                    //row["uid"]=cn.dr["uid"];
                     dt.Rows.Add(row);
                     count++;
                 }
                 GridView1.DataSource = dt;
-                GridView1.DataBind();
-            }
+            GridView1.DataBind();
         }
     }
 }

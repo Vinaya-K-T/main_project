@@ -11,8 +11,26 @@ namespace pothole_detection_system.userr
 {
 
 
-    public partial class WebForm1
+    public partial class WebForm10
     {
+
+        /// <summary>
+        /// txtfn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtfn;
+
+        /// <summary>
+        /// txtpno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpno;
 
         /// <summary>
         /// txtem control.
@@ -24,31 +42,13 @@ namespace pothole_detection_system.userr
         protected global::System.Web.UI.WebControls.TextBox txtem;
 
         /// <summary>
-        /// txtmsg control.
+        /// txtpswd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmsg;
-
-        /// <summary>
-        /// txtsub control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsub;
-
-        /// <summary>
-        /// txtui control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtui;
+        protected global::System.Web.UI.WebControls.TextBox txtpswd;
 
         /// <summary>
         /// Button1 control.
@@ -58,5 +58,14 @@ namespace pothole_detection_system.userr
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

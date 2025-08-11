@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace pothole_detection_system.Admins
+namespace pothole_detection_system.userr
 {
 
 
-    public partial class WebForm8
+    public partial class WebForm2
     {
 
         /// <summary>
