@@ -7,21 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace pothole_detection_system.login_public
+namespace pothole_detection_system.contractor
 {
 
 
     public partial class Site1
     {
-
-        /// <summary>
-        /// style_sheet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlLink style_sheet;
 
         /// <summary>
         /// head control.

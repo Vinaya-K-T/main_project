@@ -11,7 +11,7 @@ namespace pothole_detection_system.contractor
 {
 
 
-    public partial class WebForm4
+    public partial class WebForm6
     {
 
         /// <summary>
