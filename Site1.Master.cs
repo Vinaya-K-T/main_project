@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace pothole_detection_system.Admins
+namespace pothole_detection_system.login_public
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
